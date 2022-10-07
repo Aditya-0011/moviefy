@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Signup</title>
+  </head>
+
+  <body>
+    <div class="topnav topnav-auth">
+          <a href="/" id="heading">MOVIEFY</a>
+          <a href="/">HOME</a>
+    </div>
+
+    <div class="login-box">
+      <h2>SIGN UP</h2>
+      <form  method="POST">
+        <div class="user-box">
+          <input type="text" name="username" required/>
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="email" name="email" required/>
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required/>
+          <label>Password</label>
+        </div>
+        <button type="text" class="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          SIGN UP
+        </button>
+        <div id="utility-bar">
+          <p>Already have an account? &nbsp</p><a href="/login">Login</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
