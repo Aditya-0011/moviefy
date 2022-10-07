@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+        <title>home</title>
+    </head>
+    <body>
+        <div class="topnav">
+          <a href="/" id="heading">MOVIEFY</a>
+          <a href="/login">LOGIN</a>
+          <a href="/signup">SIGNUP</a>
+        </div>
+
+        <div class="login-box">
+          <form method="POST">
+            <div class="user-box">
+              <input type="text" name="username" placeholder="enter moviefy url here" required/>
+            </div>
+            <button type="text" class="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              SEARCH
+            </button>
+          </form>
+        </div>
+    </body>
+</html>
