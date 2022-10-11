@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, redirect, url_for, session, log
 from tmdbv3api import TMDb, Movie, TV
 import sqlite3
 from hashlib import md5
+from pprint import pprint
 
 
 class User:
@@ -81,11 +82,12 @@ def user(name):
         Search = request.form['search']
         movies = movie.search(Search)
         l = []
+        pprint(movies[0])
 
         for i in movies:
-            l.append([i.title, i.id, "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + i.poster_path])
+            l.append([i.title, i.id, "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + (i.backdrop_path or "")])
 
-        return render_template("user.html", leng=len(l), b=l)
+        return render_template("user.html", leng=len(l), b =l)
 
     # movies = movie.details(id)
     # print(movies.poster_path)
