@@ -82,10 +82,14 @@ def user(name):
         Search = request.form['search']
         movies = movie.search(Search)
         l = []
-        pprint(movies[0])
+        
+        img_base_url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2"
+        no_preview_url = "https://test.crowdwisdom.co.in/images/common/no-image.png"
+    
 
         for i in movies:
-            l.append([i.title, i.id, "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + (i.backdrop_path or "")])
+            img = i.backdrop_path
+            l.append([i.title, i.id,  img_base_url + img if img else no_preview_url])
 
         return render_template("user.html", leng=len(l), b =l)
 
