@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}"/>
-    <title>Username</title>
-  </head>
 
-  <body>
-    <div class="topnav topnav-auth">
-          <a href="/user" id="heading">MY PLAYLIST</a>
-          <a href="/login">LOGOUT</a>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}" />
+  <title>Username</title>
+</head>
 
-    <div id="user-playlist">
-      {%for i in range(0, len)%}
-        <div class="movie_card" id="bright">
-          <div>
-            <img src="{{a[i][2]}}" class="blur_back">
-          </div>
+<body>
+  <div class="topnav topnav-auth">
+    <a href="/user" id="heading">MY PLAYLIST</a>
+    <a href="/login">LOGOUT</a>
+  </div>
 
-          <div class="info_section">
-            <div class="movie_header">
-              <h1>{{a[i][0]}}</h1>
-            </div>
-            <div class="movie_social">
-              <ul>
-                <li>Remove</li>
-              </ul>
-            </div>
-          </div>
+  <div id="user-playlist">
+    {%for i in range(0, leng)%}
+    <div class="movie_card" id="bright">
+      <div>
+        <img src="{{b[i][2]}}" class="blur_back">
+      </div>
+
+      <div class="info_section">
+        <div class="movie_header">
+          <h1>{{b[i][0]}}</h1>
         </div>
-     {%endfor%}
-    </div>
-
-    <div class="login-box">
-      <form method="POST">
-        <div class="user-box">
-          <input type="text" name="search" required/>
-          <label>Search Movie</label>
+        <div class="movie_social">
+          <ul>
+            <li>Remove</li>
+          </ul>
         </div>
-        <button type="text" class="submit search-submit">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          SEARCH
-        </button>
-      </form>
+      </div>
     </div>
+    {%endfor%}
+  </div>
 
-    <div id="search-playlist">
-      {%for i in range(0, leng)%}
-        <div class="movie_card" id="bright">
-          <div>
-            <img src="{{b[i][2]}}" class="blur_back">
-          </div>
+  <div class="login-box">
+    <form method="POST">
+      <div class="user-box">
+        <input type="text" name="search" required />
+        <label>Search Movie</label>
+      </div>
+      <button type="text" class="submit search-submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        SEARCH
+      </button>
+    </form>
+  </div>
 
-          <div class="info_section">
-            <div class="movie_header">
-              <h1>{{b[i][0]}}</h1>
-            </div>
-            <div class="movie_social">
-              <ul>
-                <li>Remove</li>
-              </ul>
-            </div>
-          </div>
+  <div id="search-playlist">
+    {%for i in range(0, leng)%}
+    <div class="movie_card" id="bright">
+      <div>
+        <img src="{{b[i][2]}}" class="blur_back">
+      </div>
+
+      <div class="info_section">
+        <div class="movie_header">
+          <h1>{{b[i][0]}}</h1>
         </div>
-     {%endfor%}
+        <div class="movie_social">
+          <ul>
+            <li>Remove</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </body>
+    {%endfor%}
+  </div>
+</body>
+
 </html>
