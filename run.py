@@ -3,7 +3,10 @@ from tmdbv3api import TMDb, Movie, TV
 import sqlite3
 from hashlib import md5
 from pprint import pprint
+from os import getenv
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class User:
     username = None
@@ -15,7 +18,7 @@ conn = sqlite3.connect('Database.sqlite', check_same_thread=False)
 cur = conn.cursor()
 
 tmdb = TMDb()
-tmdb.api_key = '0e5909614d58cec33516530e8b7b975b'
+tmdb.api_key = getenv("TMDB_API_KEY");
 tmdb.language = 'en'
 tmdb.debug = True
 
